@@ -1,3 +1,4 @@
+/* Styles the main body container */
 .body {
     background-color: lch(15% 5 260);
     height: auto;
@@ -5,19 +6,23 @@
     width: 100%;
     color: whitesmoke;
   }
+
+  /* Styles the main feedback container box */
   .parent-box{
     margin-top: 1%;
     padding-top: 1%;
     margin-left: 15%;
     width: 60%;
-    
-  
   border: 1px solid #444;
   }
+
+  /* Styles the "Give Feedback" button */
   .feedback-button{
     margin-left: 45%;
     margin-bottom: 10%;
   }
+
+  /* Styles the feedback modal that pops up */
   .hidden-box{
     position: absolute;
     top: 5%; 
@@ -29,14 +34,20 @@
     padding: 20px;
     z-index: 999;
   }
+
+  /* Container for feedback number buttons */
   .buttons-pane{
     margin-top: 3%;
     margin-left: 15%;
     margin-right: 15%;
   }
+
+  /* Spacing for individual number buttons */
   .select-btn{
     margin-left: 2%;
   }
+
+  /* Styles the feedback prompt/question */
   .feedback-quiz{
     margin-top: 0;
     margin-left: 18%;
@@ -45,39 +56,50 @@
     font-weight: bolder;
     color: whitesmoke;
 }
+
+/* Close button for modal */
 .btn-close {
     color: white;
     padding: 1% 1%;
     margin-left: 95%;
     font-size: large;
-    cursor: pointer; /* Adds a pointer cursor to indicate it's clickable */
-    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    cursor: pointer; 
+    transition: all 0.3s ease; 
   }
   
+  /* Hover effect for close button */
   .btn-close:hover {
-    color: red; /* Changes color to red on hover (you can use any color you want) */
-    transform: scale(1.2); /* Scales the button up slightly on hover */
+    color: red; 
+    transform: scale(1.2); 
   }
   
+  /* Styles the Cancel button */
 .cancel-button{
     margin-left: 12%;
     border-color: blueviolet;
 }
 
+/* Styles the Submit button */
 .submit-button{
     margin-top: 3%;
     margin-bottom: 5%;
     margin-left: 69%;
     background-color: rgb(122, 43, 226);
 }
+
+/* Feedback rating scale text (left and right ends) */
 .range-text{
     margin-left: 9%;
     color: whitesmoke;
     margin-top: 2%;
 }
+
+/* Aligns text to the far right */
 .text-end{
     margin-left: 50%;
 }  
+
+/* Styles the requirements panel shown under feedback modal */
 .test-panel{
     margin-top: 1%;
     margin-left: 15%;

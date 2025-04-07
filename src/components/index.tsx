@@ -1,29 +1,45 @@
+// Import CSS styles for component UI
 import "./index.css";
-import { useState } from "react";
-import { Fragment } from "react/jsx-runtime";
 
+// Import useState hook
+import { useState } from "react";
+
+// Main component
 const Index = () => {
+  // State to store selected rating index (default -1 means no selection)
   const [selectedIndex, setSelected] = useState(-1);
+
+  // State to control visibility of the feedback modal
   const [isVisible, setVisible] = useState(false);
+
+  // State to track whether feedback was submitted
   const [submited, submit] = useState(false);
 
+  // Array to help creating buttons
   let buttons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  // Toggle the visibility of the feedback modal
+
   const displayBox = () => {
     setVisible(!isVisible);
   };
+  // Toggle the submission state
   const submiting = () => {
     submit(!submited);
   };
+  // Returns the selected rating index
   function getResponse() {
     return selectedIndex;
   }
 
   return (
     <div className="body">
+      {/* Main Feedback UI box */}
       <div className="  parent-box shadow rounded">
         <h1 className="text-center ">Feedback Modal Component</h1>
         <p className="text-center">we would like to receive your feed back</p>
 
+        {/* Thank-you message after submission if a rating was selected */}
         {submited && getResponse() >= 0 ? (
           <p className="text-center text-success">
             Thank you for your response: {getResponse() + 1}
@@ -32,6 +48,7 @@ const Index = () => {
           ""
         )}
 
+        {/* Button to trigger modal visibility */}
         <button
           type="button"
           className="btn btn-primary feedback-button"
@@ -41,15 +58,20 @@ const Index = () => {
         </button>
       </div>
 
+      {/* Feedback modal (conditionally rendered based on isVisible) */}
       {isVisible && (
         <div className="rounded shadow hidden-box " data-bs-dismiss="modal">
+          {/* Close button for modal */}
           <p className=" btn-close" onClick={displayBox}>
             x
           </p>
+
+          {/* Question prompt */}
           <p className="feedback-quiz">
             How likely are you to recommend frontendPro to someone you know?
           </p>
 
+          {/* Rating buttons (1–10), highlight active selection */}
           <div className="buttons-pane ">
             {buttons.map((button, index) => (
               <button
@@ -64,10 +86,13 @@ const Index = () => {
             ))}
           </div>
 
+          {/* Rating scale text */}
           <div className="d-flex ">
             <p className="range-text">Not likely at all</p>
             <p className="range-text text-end">Extremely likely</p>
           </div>
+
+          {/* Cancel and Submit buttons */}
           <div>
             <button
               className="btn btn-outline-danger cancel-button"
@@ -88,6 +113,7 @@ const Index = () => {
         </div>
       )}
 
+      {/* Static panel showing challenge requirements (for reference) */}
       <div className="test-panel rounded shadow">
         <h3>Challenge Requirements</h3>
         <p>
